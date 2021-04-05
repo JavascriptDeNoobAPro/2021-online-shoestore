@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/styles.module.css";
+import baseUrl from "../utils/baseUrl";
+import styles from "../styles/card.module.css";
+import Cards from "../components/Cards";
 
 function Home({ products }) {
   console.log(products);
@@ -10,19 +11,11 @@ function Home({ products }) {
       <Head>
         <title>Next E-commerce</title>
       </Head>
-      <div className={styles.root}>
-        {products.map(({ name, description, mediaUrl, price, _id }) => {
-          return (
-            <div className={styles.card} key={_id}>
-              {name}
-            </div>
-          );
-        })}
+      <div className={styles.container}>
+        {products.map((products) => (
+          <Cards products={products} key={products._id} />
+        ))}
       </div>
-
-      <Link href='/product'>
-        <a>Go to Products</a>
-      </Link>
     </>
   );
 }
@@ -30,7 +23,7 @@ function Home({ products }) {
 export default Home;
 
 export async function getStaticProps(context) {
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch(`${baseUrl}/api/products`);
   const data = await res.json();
 
   return {

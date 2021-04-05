@@ -4,12 +4,8 @@
 
 #dotenv environment variables file
 .env 
-.env.build 
+.env.local
 
 #Dependency directories
 node_modules/
 
-#logs 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

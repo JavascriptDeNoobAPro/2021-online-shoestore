@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+  }
+  .box {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 40px;
+    background: #232323;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+  }
+
+  .box::before {
+    content: "Nike";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 6em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .box::after {
+    content: "Running Shoes";
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 5em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .box::before,
+  .box::after {
+    opacity: 0.04;
+  }
+
+  .box:hover h2 {
+    top: 40%;
+    opacity: 1;
+  }
+
+  .box h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+  }
+
+  .box h4 {
+    color: #d3d3d3;
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 0 3rem;
+  }
+
+  .box a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0, 75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+  }
+
+  .box:hover a {
+    bottom: 10px;
+    opacity: 1;
+  }
+
+  .content {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pricestars {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pricestars h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+  }
+  
+
+  
